@@ -1,4 +1,4 @@
-# Clearpath
+# Clearpath <img src="https://github.com/Samsonroyal/Clearpath/assets/26835888/b04dfbba-fb7f-4afb-b1c5-f9d2ea27bbf7" alt="Logo" width="40" height="40" />
 
 ## Description
 
