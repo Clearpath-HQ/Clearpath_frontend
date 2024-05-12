@@ -78,9 +78,9 @@ export function Hero() {
                 alt="Clearpath"
                 className="mx-auto w-full max-w-6xl rounded-lg"
                 height={400}
-                src="/placeholder.svg"
+                src="/Macbook16-dark.png"
                 style={{
-                  aspectRatio: "1200/400",
+                  aspectRatio: "1200/1000",
                   objectFit: "cover",
                 }}
                 width={1200}
