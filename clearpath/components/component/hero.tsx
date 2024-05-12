@@ -30,20 +30,16 @@ export function Hero() {
         <Image
                 alt="Clearpath"
                 className="mx-auto w-full max-w-6xl rounded-md p-2"
-                height={16}
+                height={20}
                 src="/group.png"
-                width={16}
+                width={20}
               />
         
           <span className="text-lg font-semibold">Clearpath</span>
         </Link>
-        <nav className="hidden lg:flex gap-4 sm:gap-6">
-          <Link className="text-lg font-semibold hover:underline underline-offset-4" href="#">
-            Features
-          </Link>
-          
-          <Link className="text-lg font-semibold hover:underline underline-offset-4" href="#">
-            Our Github
+        <nav className="hidden lg:flex gap-4 sm:gap-6">          
+          <Link className="text-lg font-semibold hover:underline underline-offset-4" href="https://github.com/Samsonroyal/Clearpath">
+            Github Repo
           </Link>
         </nav>
         <Sheet>
@@ -54,14 +50,9 @@ export function Hero() {
             </Button>
           </SheetTrigger>
           <SheetContent side="right">
-            <nav className="grid gap-2 py-6">
-
-              <Link className="flex w-full items-center py-2 text-lg font-semibold" href="#">
-                Features
-              </Link>
-              
-              <Link className="flex w-full items-center py-2 text-lg font-semibold" href="#">
-                Our Github
+            <nav className="grid gap-2 py-6">              
+              <Link className="flex w-full items-center py-2 text-lg font-semibold" href="https://github.com/Samsonroyal/Clearpath">
+                Github Repo
               </Link>
             </nav>
           </SheetContent>
@@ -76,7 +67,7 @@ export function Hero() {
                   Breathing life and clarity into work
                 </h1>
                 <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-                  Clearpath is a powerful project management tool that helps you stay organized, focused, and on top of
+                  Clearpath is a lightweight project management tool that gives you clarity, focus, and adds fun to
                   your work.
                 </p>
               </div>
@@ -91,27 +82,21 @@ export function Hero() {
                 className="mx-auto w-full max-w-6xl rounded-lg"
                 height={400}
                 src="/Macbook16-dark.png"
-                style={{
-                  aspectRatio: "1200/1000",
-                  objectFit: "cover",
-                }}
                 width={1200}
               />
             </div>
           </div>
         </section>
       </main>
-      <footer className="flex flex-col justify-between px-4 sm:flex-row py-6 w-full shrink-0 items-center lg:px-0 border-t">
-        <p className="text-xs text-gray-500 dark:text-gray-400">© 2024 Clearpath. Open Source Software built for the world from MEST.</p>
-        <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-          <Link className="text-xs hover:underline underline-offset-4" href="#">
-            Terms of Service
-          </Link>
-          <Link className="text-xs hover:underline underline-offset-4" href="#">
-            Privacy
-          </Link>
-        </nav>
-      </footer>
+      <footer className="flex flex-col justify-between items-center px-4 py-6 w-full shrink-0 border-t sm:flex-row sm:justify-between sm:px-8 lg:px-16 fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-800">
+  <p className="text-xs text-gray-500 dark:text-gray-400">© 2024 Clearpath. Open Source Software built for the world from MEST.</p>
+
+  <nav className="mt-4 sm:mt-0 flex gap-4 sm:gap-6">
+    <Link className="text-xs hover:underline underline-offset-4" href="https://github.com/Samsonroyal/Clearpath/blob/main/PRIVACY.md">
+      Privacy
+    </Link>
+  </nav>
+</footer>
     </div>
   )
 }
