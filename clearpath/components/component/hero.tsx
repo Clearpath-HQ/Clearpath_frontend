@@ -25,31 +25,43 @@ import Image from "next/image";
 export function Hero() {
   return (
     <div className="">
-      <header className="h-14 flex items-center px-4 lg:px-0">
+      <header className="flex h-14 items-center justify-between px-4 md:px-6 lg:container lg:mx-auto lg:max-w-7xl">
+        <Link className="flex items-center" href="#">
+        <Image
+                alt="Clearpath"
+                className="mx-auto w-full max-w-6xl rounded-md p-2"
+                height={16}
+                src="/group.png"
+                width={16}
+              />
+        
+          <span className="text-lg font-semibold">Clearpath</span>
+        </Link>
+        <nav className="hidden lg:flex gap-4 sm:gap-6">
+          <Link className="text-lg font-semibold hover:underline underline-offset-4" href="#">
+            Features
+          </Link>
+          
+          <Link className="text-lg font-semibold hover:underline underline-offset-4" href="#">
+            Our Github
+          </Link>
+        </nav>
         <Sheet>
           <SheetTrigger asChild>
-            <Button className="" size="icon" variant="outline">
+            <Button className="lg:hidden" size="icon" variant="outline">
               <MenuIcon className="h-6 w-6" />
               <span className="sr-only">Toggle navigation menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="left">
-            <Link className="flex items-center justify-center" href="#">
-              <ClipboardIcon className="h-6 w-6" />
-              <span className="text-lg font-semibold">Clearpath</span>
-            </Link>
+          <SheetContent side="right">
             <nav className="grid gap-2 py-6">
+
               <Link className="flex w-full items-center py-2 text-lg font-semibold" href="#">
                 Features
               </Link>
+              
               <Link className="flex w-full items-center py-2 text-lg font-semibold" href="#">
-                Pricing
-              </Link>
-              <Link className="flex w-full items-center py-2 text-lg font-semibold" href="#">
-                About
-              </Link>
-              <Link className="flex w-full items-center py-2 text-lg font-semibold" href="#">
-                Contact
+                Our Github
               </Link>
             </nav>
           </SheetContent>
@@ -89,8 +101,8 @@ export function Hero() {
           </div>
         </section>
       </main>
-      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 lg:px-0 border-t">
-        <p className="text-xs text-gray-500 dark:text-gray-400">© 2024 Clearpath. All rights reserved.</p>
+      <footer className="flex flex-col justify-between px-4 sm:flex-row py-6 w-full shrink-0 items-center lg:px-0 border-t">
+        <p className="text-xs text-gray-500 dark:text-gray-400">© 2024 Clearpath. Open Source Software built for the world from MEST.</p>
         <nav className="sm:ml-auto flex gap-4 sm:gap-6">
           <Link className="text-xs hover:underline underline-offset-4" href="#">
             Terms of Service
