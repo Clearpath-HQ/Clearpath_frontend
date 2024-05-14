@@ -40,7 +40,7 @@ To get started with Clearpath, follow these steps:
 We welcome contributions from the community. Please read the [Contributing Guidelines](CONTRIBUTING.md) before making any contributions.
 
 1. Fork the repository
-2. Create a new branch: `git checkout -b my-new-feature`
+2. Create a new branch: `git checkout -branch your-branch-name`
 3. Make your changes; ensure to periodically stage the changes
 4. Build the application; before you commit changes to production always ensure to run this command `npm run build`
 5. Commit the changes: `git commit -m 'Add some feature'`
