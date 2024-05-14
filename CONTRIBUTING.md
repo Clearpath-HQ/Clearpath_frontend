@@ -13,15 +13,18 @@ Thank you for considering contributing to our project! To ensure a smooth collab
 ## Getting Started
 
 The Frontend is a NextJs app; that uses the App Router instead of src/ which means that every folder you create within the App folder becomes a route. 
-All you have to do is to do is add a page.tsx within that folder.
+All you have to do is to do is add a page.tsx file within that folder.
 
 ### Installation of Libraries
 
-Inside the app folder you will also find a components folder; this one houses the bricks/lego pieces or building blocks of all the figments your add needs. For this project we shall be keenly importing from two sources/libraries (Shadcn Ui and Radix Ui) both of which have standardisedl beautiful and functional components. 
+Inside the app folder you will also find a components folder; this one houses the bricks/lego pieces or building blocks of all the figments your add needs. For this project we shall be keenly importing from only three sources/libraries (Shadcn Ui, Radix Ui & Chakra UI) both of which have standardisedl beautiful and functional components. 
 
 For Shadcn UI follow this [guide](https://ui.shadcn.com/docs/installation/next) to set up your project to enable installation of components 
 
 For Radix Ui follow this [documentation](https://www.radix-ui.com/themes/docs/overview/getting-started) to officially get set up to install their primitives.
+
+For Chakra Ui follow this [documentation](https://v2.chakra-ui.com/getting-started/nextjs-app-guide) to get started on using it in the nextjs app
+
 
 When you install from Shadcn Ui the installed components will be installed within a ui/ subfolder in the components/ folder. 
 
@@ -45,3 +48,6 @@ If you have any questions please head over to [discussions](https://github.com/S
 
 ## Thankss for your contributions
 We appreciate your contributions and look forward to working with you!
+
+# note
+Any PRs that don't meet the set standards and coverage shall not be merged; there shall be constant reviews of PRs and code that is pushed.
