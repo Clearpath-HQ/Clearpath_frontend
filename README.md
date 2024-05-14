@@ -39,12 +39,13 @@ To get started with Clearpath, follow these steps:
 
 We welcome contributions from the community. Please read the [Contributing Guidelines](CONTRIBUTING.md) before making any contributions.
 
+
 1. Clone the repository by clicking on code button and choose either Github Desktop or CLI
    As seen in the image below
 ![image](https://github.com/Samsonroyal/Clearpath/assets/26835888/203f220f-0815-4821-b3b6-4388115d725d)
 
 
-3. Create a new branch: `git checkout -b my-new-feature`
+3. Create a new branch: `git checkout -branch your-branch-name`
 4. Make your changes; ensure to periodically stage the changes
 5. Build the application; before you commit changes to production always ensure to run this command `npm run build`
 6. Commit the changes: `git commit -m 'Add some feature'`
