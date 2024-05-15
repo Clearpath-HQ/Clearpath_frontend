@@ -1,0 +1,28 @@
+/* components/Task.module.css */
+.task {
+    border: 1px solid #ddd;
+    padding: 16px;
+    border-radius: 8px;
+    margin: 16px 0;
+    background-color: #f9f9f9;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+  
+  .description {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+  
+  .dates {
+    font-size: 0.875rem;
+    color: #555;
+  }
+  
+  .dates span {
+    display: block;
+  }
+  
