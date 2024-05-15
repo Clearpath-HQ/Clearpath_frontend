@@ -30,20 +30,28 @@ MORE THAN your regular Project management tool. cleaner, sexier, no clutter whic
 
 To get started with Clearpath, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/clearpath/clearpath.git`
-2. Install dependencies: `npm install`
-3. Build the application: `npm run build`
-4. Start the development server: `npm start`
+1. Clone the repository: `git clone https://github.com/Samsonroyal/clearpath.git`
+2. change directory: `cd clearpath`
+3. Install dependencies: `npm install`
+4. Run the application `npm run dev`
 
 ## Contributing
 
 We welcome contributions from the community. Please read the [Contributing Guidelines](CONTRIBUTING.md) before making any contributions.
 
-1. Fork the repository
-2. Create a new branch: `git checkout -b my-new-feature`
-3. Make your changes and commit them: `git commit -m 'Add some feature'`
-4. Push to the branch: `git push origin my-new-feature`
-5. Submit a pull request
+
+1. Clone the repository by clicking on code button and choose either Github Desktop or CLI
+   As seen in the image below
+![image](https://github.com/Samsonroyal/Clearpath/assets/26835888/203f220f-0815-4821-b3b6-4388115d725d)
+
+
+3. Create a new branch: `git checkout -branch your-branch-name`
+4. Make your changes; ensure to periodically stage the changes
+5. Build the application; before you commit changes to production always ensure to run this command `npm run build`
+6. Commit the changes: `git commit -m 'Add some feature'`
+7. Push to the branch: `git push origin my-new-feature`
+8. Submit a pull request
+9. Assign someone to review your PR before it's merged into the main branch.
 
 ## Documentation
 
