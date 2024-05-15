@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export function Hero() {
   return (
-    <div className="">
+    <div>
       <header className="flex h-14 items-center justify-between px-4 md:px-6 lg:container lg:mx-auto lg:max-w-7xl">
         <Link className="flex items-center" href="#">
         <Image
@@ -63,9 +63,9 @@ export function Hero() {
               <Image
                 alt="Clearpath"
                 className="mx-auto w-full max-w-6xl rounded-lg"
-                height={1200}
-                src="/Macbook16dark.png"
-                width={1200}
+                height={800}
+                src="/MacBook.svg"
+                width={800}
               />
             </div>
           </div>
