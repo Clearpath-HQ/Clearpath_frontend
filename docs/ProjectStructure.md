@@ -31,49 +31,52 @@ This project structure follows the Next.js App Router conventions for defining r
 
 ```
 clearpath/
-├── .next/                            # Next.js build output
-├── node_modules/                     # Installed dependencies
-├── next-env.d.ts                     # TypeScript type definitions
+├── .next/ # Next.js build output
+├── node_modules/ # Installed dependencies
+├── next-env.d.ts # TypeScript type definitions
 ├── app/
-│   ├── home/                         # Home Route
-│   │   └── page.tsx                  # Home page component
-│   │   ├── [auth]/                   # Authentication routes
-│   │   │   ├── signin/
-│   │   │   │   └── page.tsx          # Sign-in page component
-│   │   │   └── login/
-│   │   │       └── page.tsx          # Login page component
-│   │   └── [dashboard]/              # Dashboard routes
-│   │       ├── terminal/             # Terminal/Dashboard Command Center route
-│   │       │   └── page.tsx          # Terminal/Dashboard Command Center component
-│   │       ├── workspace/            # Workspace routes
-│   │       │   ├── page.tsx          # Workspace page component
-│   │       │   └── sprints/          # Sprints routes (renamed from projects)
-│   │       │       ├── [sprintId]/
-│   │       │       │   ├── page.tsx
-│   │       │       │   ├── tasks/    # Tasks routes (nested under sprints)
-│   │       │       │   │   ├── page.tsx
-│   │       │       │   │   └── [taskId]/
-│   │       │       │   │       └── page.tsx
-│   │       │       │   └── layout.tsx
-│   │       │       ├── page.tsx
-│   │       │       └── layout.tsx
-│   │       └── preferences/          # Preferences routes
-│   │           ├── page.tsx          # Preferences page component
-│   │           ├── account/          # Personal account settings
-│   │           │   └── page.tsx
-│   │           ├── notifications/    # Notifications settings
-│   │           │   └── page.tsx
-│   │           └── delete-account/   # Delete account
-│   │               └── page.tsx
-│   ├── layout.tsx
-│   ├── head.tsx
-│   └── globals.css
+│ ├── home/ # Home Route
+│ │ └── page.tsx # Home page component
+│ ├── auth/ # Authentication routes
+│ │ ├── signin/
+│ │ │ └── page.tsx # Sign-in page component
+│ │ └── login/
+│ │ └── page.tsx # Login page component
+│ ├── dashboard/ # Dashboard routes
+│ │ ├── terminal/ # Terminal/Dashboard Command Center route
+│ │ │ └── page.tsx # Terminal/Dashboard Command Center component
+│ │ ├── workspace/ # Workspace routes
+│ │ │ ├── page.tsx # Workspace page component
+│ │ │ └── sprints/ # Sprints routes (renamed from projects)
+│ │ │ ├── [sprintId]/
+│ │ │ │ ├── page.tsx
+│ │ │ │ ├── tasks/ # Tasks routes (nested under sprints)
+│ │ │ │ │ ├── page.tsx
+│ │ │ │ │ └── [taskId]/
+│ │ │ │ │ └── page.tsx
+│ │ │ │ └── layout.tsx
+│ │ │ ├── page.tsx
+│ │ │ └── layout.tsx
+│ │ └── preferences/ # Preferences routes
+│ │ ├── page.tsx # Preferences page component
+│ │ ├── account/ # Personal account settings
+│ │ │ └── page.tsx
+│ │ ├── notifications/ # Notifications settings
+│ │ │ └── page.tsx
+│ │ └── delete-account/ # Delete account
+│ │ └── page.tsx
+│ ├── layout.tsx
+│ ├── head.tsx
+│ └── globals.css
 ├── components/
-│   ├── component/
-│   └── ui/
+│ ├── component/
+│ └── ui/
 ├── lib/
 ├── public/
 ├── package.json
 └── next.config.js
+
 ```
 
+
+This clearly depicts how the project folder structure should look like; please adhere to it.
