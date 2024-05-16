@@ -2,10 +2,6 @@
 
 import Image from "next/image";
 
-import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-
 export default function OnboaringSplash() {
   return (
     <div className="">
