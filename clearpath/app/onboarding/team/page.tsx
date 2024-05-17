@@ -10,7 +10,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 export default function OnboaringTeam() {
   return (
     <div className="">
-      <div className="w-full bg-[#E2E8F0] bg-opacity-95 backdrop-blur-sm">
+      <div className="w-full h-screen bg-[#E2E8F0] bg-opacity-95 backdrop-blur-sm">
         <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
           <div className=" flex flex-col items-center justify-center gap-4 w-[346px] m-auto">
             <Avatar>
