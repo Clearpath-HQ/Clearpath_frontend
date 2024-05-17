@@ -33,7 +33,9 @@ export default function OnboaringTeam() {
               <span>Add more</span>
               <hr className="border-t border-[#4A5567]" />
             </div>
-            <Button variant="default">Next</Button>
+            <Button variant="default" className="w-full">
+              Next
+            </Button>
           </div>
         </section>
       </div>
