@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -30,4 +34,23 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.dashNav {
+  margin: 0;
+  padding: 17px 8px;
+  width: 60px;
+  background-color: #f1f5f9;
+  color: #00c16a;
+}
+.sideNavIcon {
+  width: 24px;
+  height: 24px;
+}
+.dashNavLogo {
+  max-width: 100%;
+  margin-bottom: auto;
+}
+.modeButton {
+  margin-top: auto;
 }
