@@ -28,8 +28,14 @@ export default function OnboaringWelcome() {
                 to get started
               </p>
             </div>
-            <Input type="email" placeholder="Workspace name" />
-            <Button variant="default">Next</Button>
+            <Input
+              type="email"
+              placeholder="Workspace name"
+              className=" w-full"
+            />
+            <Button variant="default" className="w-full">
+              Next
+            </Button>
           </div>
         </section>
       </div>
