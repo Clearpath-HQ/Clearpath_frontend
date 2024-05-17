@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-export default function OnboaringSplash() {
+export default function SplashPage () {
   return (
     <div className="">
       <div className="w-full h-screen bg-[#E2E8F0] bg-opacity-95 backdrop-blur-sm">

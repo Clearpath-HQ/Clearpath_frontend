@@ -6,7 +6,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
-export default function OnboaringWelcome() {
+export default function WelcomePage() {
   return (
     <div className="">
       <div className="w-full h-screen  bg-[#E2E8F0] bg-opacity-95 backdrop-blur-sm">

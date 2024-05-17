@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-export default function OnboaringTeam() {
+export default function TeamPage () {
   return (
     <div className="">
       <div className="w-full h-screen bg-[#E2E8F0] bg-opacity-95 backdrop-blur-sm">
