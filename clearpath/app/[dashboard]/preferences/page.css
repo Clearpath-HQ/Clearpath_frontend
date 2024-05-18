@@ -1,0 +1,36 @@
+.flexColumnImportant {
+    flex-direction: column !important;
+}
+
+@media (max-width: 768px) {
+    .flexColumnImportant {
+   
+        padding-right: 3vw;
+        width: auto;
+       
+    }
+}
+
+@media (max-width: 480px) {
+    .flexColumnImportant {
+   
+        padding-right: 2vw;
+        width: auto;
+
+        
+    }
+
+
+}
+
+.parentStyle {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 600px) {
+  .parentStyle {
+    flex-direction: column;
+  }
+}
+
