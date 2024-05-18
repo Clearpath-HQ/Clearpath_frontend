@@ -50,7 +50,7 @@ const Button2 = styled(Button)`
   align-items: center;
 `;
 
-export default function HomePage() {
+export default function Preferences() {
   const containerStyle: CSSProperties = {
     display: 'flex',
     flexDirection: 'column',
@@ -142,7 +142,6 @@ export default function HomePage() {
       </div>
 
       <div className="divider"></div>
-
       <p style={{ color: '#64748B', marginLeft: '200px' }}>Your Account</p>
       <br/>
       
@@ -180,11 +179,11 @@ export default function HomePage() {
         <div className="grid gap-4 py-4">
           <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="name" className="text-right">
-              Name
+              Full Name
             </Label>
             <Input
               id="name"
-              defaultValue="Pedro Duarte"
+              defaultValue="Roy Mohubu"
               className="col-span-3"
             />
           </div>
@@ -194,25 +193,25 @@ export default function HomePage() {
             </Label>
             <Input
               id="username"
-              defaultValue="@peduarte"
+              placeholder='@username'
               className="col-span-3"
             />
           </div>
           <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="username" className="text-right">
+            <Label htmlFor="password" className="text-right">
               Type New Password
             </Label>
             <Input
-              id="username"
+              id="password"
               className="col-span-3"
             />
           </div>
           <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="username" className="text-right">
+            <Label htmlFor="retype password" className="text-right">
               Retype New Password
             </Label>
             <Input
-              id="username"
+              id="password"
               className="col-span-3"
             />
           </div>
@@ -249,8 +248,15 @@ export default function HomePage() {
         </div>
         <div className=''>
             <Card className='w-full h-full border-radius-sm items-center gap-4 p-4'>
-              <CardTitle>header</CardTitle>
-              <CardContent>same</CardContent>
+             
+              <CardHeader>
+              <CardTitle>Current Plan</CardTitle>
+<CardDescription>Free</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p>Upgrade to a premium plan to unlock more features.</p>
+                
+              </CardContent>
               <CardFooter></CardFooter>
 
             </Card>
