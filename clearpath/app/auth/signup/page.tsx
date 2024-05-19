@@ -6,10 +6,9 @@ const SignupPage: React.FC = () => {
     <Layout>
       <AuthForm
         title="Sign up for Clearpath"
+        subTitle="A great team begins with efficiency. With a clearpath, your team will be more efficient. "
         buttonText="Sign up with Google"
-        buttonIcon="/google.png"
-        buttonAltText="google-icon"
-        buttonLink="/auth/login"
+        redirect="/auth/login"
       />
     </Layout>
   );

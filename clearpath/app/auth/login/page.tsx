@@ -6,10 +6,10 @@ const LoginPage: React.FC = () => {
     <Layout>
       <AuthForm
         title="Login to Clearpath"
+        subTitle="Welcome back, you can enter your email or login with your google
+        account"
         buttonText="Sign in with Google"
-        buttonIcon="/google.png"
-        buttonAltText="google-icon"
-        buttonLink="/auth/signup"
+        redirect="/auth/signup"
       />
     </Layout>
   );
