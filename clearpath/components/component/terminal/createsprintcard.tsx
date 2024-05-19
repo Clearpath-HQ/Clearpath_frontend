@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import React from "react";
+import CreateSprintModal from "./createsprintmodal";
 
 export default function CreateSprintCard() {
   return (
@@ -13,9 +14,7 @@ export default function CreateSprintCard() {
           <p className="text-[#64748B] text-sm mb-7 mt-2">
             Get started by creating your first sprint
           </p>
-          <Button variant="success" className="" size="xs">
-            Create sprint
-          </Button>
+          <CreateSprintModal/>
         </div>
       </div>
       <Image

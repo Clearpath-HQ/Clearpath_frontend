@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
+import { Badge } from "@/components/ui/badge";
 import React from "react";
 import { useEffect, useRef, useState } from "react";
 
@@ -16,7 +17,7 @@ export default function DailyMotivation() {
     const fetchQuote = async () => {
       const apiKey = process.env.NEXT_PUBLIC_API_NINJAS_KEY;
       if (!apiKey) {
-        setError("API key is missing. Check your .env.local file.");
+        setError("API key is missing. Check your .env file.");
         setIsLoading(false);
         return;
       }
@@ -47,15 +48,18 @@ export default function DailyMotivation() {
   }, []);
   return (
     <div className="shadow-lg w-[461px] h-[250px] rounded-lg bg-gradient-to-br from-white to-gray-600 relative after:content[''] after:absolute after:w-full after:h-full after:bg-[url('/grainBG.png')] after:top-0">
-      {isLoading ? (
-        <p>Loading quote...</p>
-      ) : error ? (
-        <p className="text-red-500">{error}</p>
-      ) : quote ? (
-        <p className="text-center text-lg font-semibold">
-          "{quote.quote}" <br /> - {quote.author}
-        </p>
-      ) : null}
+      <div className="p-7">
+        <Badge className="rounded-md">Daily Motivation</Badge>
+        {isLoading ? (
+          <p>Loading quote...</p>
+        ) : error ? (
+          <p className="text-red-500">{error}</p>
+        ) : quote ? (
+          <p className="text-center text-lg font-semibold">
+            "{quote.quote}" <br /> - {quote.author}
+          </p>
+        ) : null}
+      </div>
     </div>
   );
 }
