@@ -23,7 +23,7 @@ export const DashboardSidebar = () => {
 
   const changeMode = () => setDarkMode(!darkMode)
 
-  const handleIconClick = (icon) => {
+  const handleIconClick = (icon: any) => {
     setSelectedIcon(icon)
   }
 
