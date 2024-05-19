@@ -1,6 +1,9 @@
+// @ts-ignore
 "use client";
-import React, { useState } from "react";
+import styled from 'styled-components';
+import { CSSProperties, useState } from 'react';
 import { Switch } from "@/components/ui/switch";
+import './page.css';
 import {
   Dialog,
   DialogContent,
@@ -9,21 +12,26 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+} from "@/components/ui/dialog"
 import {
-  Card,
-  CardHeader,
-  CardContent,
-  CardTitle,
-  CardDescription,
-  CardFooter,
-} from "@/components/ui/card";
-import TicketCard from "@/components/component/ticketCard";
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
-import Link from "next/link";
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
+import TicketCard from "@/components/component/ticketCard"
+import { Separator } from "@/components/ui/separator"
+import Link from "next/link"
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
+import { Label } from "@/components/ui/label"
+import {Card, CardHeader, CardContent, CardTitle, CardDescription, CardFooter} from "@/components/ui/card"
+import { Heading4 } from 'lucide-react';
 
 export default function Preferences() {
   const [isEnabled, setIsEnabled] = useState(false);
@@ -42,7 +50,7 @@ export default function Preferences() {
       <main className="flex-1 overflow-auto grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
       <header className="flex h-16 w-full items-center justify-center px-4 md:px-6">
       <div className="mx-auto max-w-[1132px] flex w-full items-center justify-between">
-        <div className="flex items-center gap-2">
+        <div className="flex flex-col items-start">
         <h1 className="py-4 text-[32px] font-semibold leading-none tracking-tight md:pt-11 text-gray-950">
               Preferences
             </h1>
@@ -53,13 +61,12 @@ export default function Preferences() {
             Preferences
           </Link>
         </nav>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center p-4">
+        <p className="your-account">Your Account</p>
           <Button size="sm">Sign out</Button>
         </div>
       </div>
-      
     </header>
-    <Separator className="border-t-1 mx-auto  border-zinc-100 " />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
           
@@ -133,13 +140,33 @@ export default function Preferences() {
               <h2 className="text-base font-semibold text-gray-500">
                 Notifications
               </h2>
-
               <Switch />
             </div>
-            <button className="flex px-7 py-5 bg-white border border-gray-200 rounded-lg shadow-md mb-2.5">
+            <button className="flex flex-col items-start px-7 py-5 bg-white border border-gray-200 rounded-lg shadow-md mb-2.5 ">
               <h2 className="text-base font-semibold text-gray-500">
-                Delete account
+                Danger Zone
               </h2>
+              <AlertDialog>
+            <AlertDialogTrigger>
+              <div className="py-2">
+              <h4 className="text-sm text-gray-500">
+                Delete account
+              </h4>
+            </div></AlertDialogTrigger>
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <AlertDialogTitle>Delete account?</AlertDialogTitle>
+                <AlertDialogDescription>
+                  This action cannot be undone. This will permanently delete your account
+                  and remove your data from our servers.
+                </AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel>Cancel</AlertDialogCancel>
+                <AlertDialogAction>Continue</AlertDialogAction>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
             </button>
           </div>
           <TicketCard />
@@ -148,3 +175,19 @@ export default function Preferences() {
     </div>
   );
 }
+
+const parentStyle: CSSProperties = {
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'center',
+
+ 
+};
+const containerStyle: CSSProperties = {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+
+};
