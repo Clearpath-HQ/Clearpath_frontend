@@ -1,9 +1,8 @@
 "use client";
-import sharp from "sharp";
-import { Button } from "@/components/ui/button"
-import { SheetTrigger, SheetContent, Sheet } from "@/components/ui/sheet"
-import Link from "next/link"
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Image from "next/image";
+import Link from "next/link";
 
 export function Hero() {
   return (
@@ -64,7 +63,7 @@ export function Hero() {
                 alt="Clearpath"
                 className="mx-auto w-full max-w-6xl rounded-lg"
                 height={1200}
-                src="/Macbook16dark.png"
+                src="/MacBook16dark.png"
                 width={1200}
               />
             </div>
