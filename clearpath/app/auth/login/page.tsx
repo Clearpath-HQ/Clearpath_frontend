@@ -10,6 +10,8 @@ const LoginPage: React.FC = () => {
         account"
         buttonText="Sign in with Google"
         redirect="/auth/signup"
+        footerText="Don't have an account?"
+        footerLinkText="Sign Up"
       />
     </Layout>
   );

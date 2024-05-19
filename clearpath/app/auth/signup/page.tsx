@@ -9,6 +9,8 @@ const SignupPage: React.FC = () => {
         subTitle="A great team begins with efficiency. With a clearpath, your team will be more efficient. "
         buttonText="Sign up with Google"
         redirect="/auth/login"
+        footerText="By signing up, you agree to our"
+        footerLinkText="Terms and Conditions."
       />
     </Layout>
   );

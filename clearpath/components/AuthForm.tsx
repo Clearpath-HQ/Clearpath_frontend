@@ -7,6 +7,8 @@ interface AuthFormProps {
   subTitle: string;
   buttonText: string;
   redirect: string;
+  footerText: string;
+  footerLinkText: string;
 }
 
 const AuthForm: React.FC<AuthFormProps> = ({
@@ -14,6 +16,8 @@ const AuthForm: React.FC<AuthFormProps> = ({
   subTitle,
   buttonText,
   redirect,
+  footerText,
+  footerLinkText,
 }) => {
   return (
     <>
@@ -41,9 +45,9 @@ const AuthForm: React.FC<AuthFormProps> = ({
       </div>
       <div>
         <p className="text-xs text-[#888] mt-[10px] mb-10">
-          Don't have an account?{" "}
+          {footerText}{" "}
           <Link href={redirect} className="text-black font-bold">
-            Sign Up
+            {footerLinkText}
           </Link>
         </p>
       </div>
