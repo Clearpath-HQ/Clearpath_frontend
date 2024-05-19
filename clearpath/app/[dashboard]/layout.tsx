@@ -16,8 +16,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <DashboardSidebar />
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className="flex">
+          <DashboardSidebar />
+          <main className="flex-1">{children}</main>
+        </div>
+      </body>
     </html>
   )
 }
