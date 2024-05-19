@@ -6,8 +6,6 @@ import TerminalCoffeeCard from "@/components/component/terminal/terminalcoffeeca
 import TopBar from "@/components/component/topbar";
 
 export default function Terminal() {
-  
-
 
   return (
     <main className="min-h-screen w-[1058px] mx-auto relative">
