@@ -1,13 +1,21 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
-import { useRef, useState } from "react";
+import CreateSprintCard from "@/components/component/terminal/createsprintcard";
+import DailyMotivation from "@/components/component/terminal/dailymotivation";
+import TerminalCoffeeCard from "@/components/component/terminal/terminalcoffeecard";
+import TopBar from "@/components/component/topbar";
 
 export default function Terminal() {
-  
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-4"> 
-
+    <main className="min-h-screen w-[1058px] mx-auto relative">
+      <TopBar/>
+        <div className=" flex mt-[96px]">
+          <DailyMotivation/>
+          <TerminalCoffeeCard/>
+        </div>
+        <p className="text-[#CBD5E1] my-6 text-xl">Sprint breakdown</p>
+        <CreateSprintCard/>
     </main>
-    
   );
 }
