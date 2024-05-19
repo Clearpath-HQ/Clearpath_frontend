@@ -1,9 +1,6 @@
-"use client"
-import styled from 'styled-components';
-import { CSSProperties } from 'react';
-import React, { useState } from 'react';
-import {Switch} from "@/components/ui/switch";
-import './page.css';
+"use client";
+import React, { useState } from "react";
+import { Switch } from "@/components/ui/switch";
 import {
   Dialog,
   DialogContent,
@@ -12,76 +9,23 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import {Card, CardHeader, CardContent, CardTitle, CardDescription, CardFooter} from "@/components/ui/card"
-
-const Button = styled.div`
-  display: flex;
-  flex-direction: column;
-  min-width: 0px;
-  justify-content: center;
-  align-items: start;
-  width: 710px;
-  height: 72px;
-  background-color: #ffffff;
-  color: #64748B;
-  border: 1px solid #E2E8F0;
-  margin-bottom: 10px;
-  border-radius: 12px;
-  padding: 0 28px;
-  box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.04), 0px 20px 25px -5px rgba(0, 0, 0, 0.1);
-
-  @media (max-width: 768px) {
-    width: auto;
-  }
-`;
-
-const Button1 = styled(Button)`
-  padding: 10px 28px;
-  justify-content: center;
-`;
-
-const Button2 = styled(Button)`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-`;
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Card,
+  CardHeader,
+  CardContent,
+  CardTitle,
+  CardDescription,
+  CardFooter,
+} from "@/components/ui/card";
+import TicketCard from "@/components/component/ticketCard";
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+import Link from "next/link";
 
 export default function Preferences() {
-  const containerStyle: CSSProperties = {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'left',
-    marginRight: '10px'
-  };
-
-  const newDivStyle: CSSProperties = {
-    width: '320px',
-    height: '429px',
-    backgroundColor: '#D9D9D9'
-  };
-
-  const parentStyle: CSSProperties = {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'flex-start',
-    justifyContent: 'center'
-  };
-
-  const dividerStyle: CSSProperties = {
-    width: '1058px',
-    height: '30px',
-    marginTop: '48px',
-    marginLeft: '200px',
-    marginBottom: '48px',
-    borderTop: '1px solid rgba(100, 116, 139, 0.3)',
-    opacity: '30%',
-    transform: 'rotate(-0deg)',
-  };
-
   const [isEnabled, setIsEnabled] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -93,175 +37,114 @@ export default function Preferences() {
     setModalIsOpen(false);
   };
 
-  const ButtonDialog = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: red;
-  background-color: white;
-  border-radius: 12px;
-  padding: 10px 20px;
-
-`;
-
-<Button>Save changes</Button>
-
   return (
-    <div className='h-full bg-white'>
-      <div className="outer-container">
-        <div className="flexColumnImportant" style={parentStyle}>
-          <p style={{
-            fontFamily: 'Inter',
-            fontSize: '28px',
-            fontWeight: 600,
-            lineHeight: '30px',
-            letterSpacing: '0.08em',
-            textAlign: 'left',
-            color: '#101729'
-          }}>Preferences</p>
-          <p style={{
-            fontFamily: 'SF Pro',
-            fontSize: '21px',
-            fontWeight: 400,
-            lineHeight: '20px',
-            textAlign: 'left',
-            color: '#64748B'
-          }}>mohuburoy@gmail.com</p>
+    <div className="flex min-h-screen w-full  justify-center bg-white px-4 py-2 dark:bg-gray-250">
+      <main className="flex-1 overflow-auto grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
+      <header className="flex h-16 w-full items-center justify-center px-4 md:px-6">
+      <div className="mx-auto max-w-[1132px] flex w-full items-center justify-between">
+        <div className="flex items-center gap-2">
+        <h1 className="py-4 text-[32px] font-semibold leading-none tracking-tight md:pt-11 text-gray-950">
+              Preferences
+            </h1>
+          <p className="text-gray-500 font-medium">mohuburoy@gmail.com</p>
         </div>
-        <div>
-          <p style={{
-            fontFamily: 'DM Sans',
-            fontSize: '16px',
-            fontWeight: 700,
-            lineHeight: '18px',
-            letterSpacing: '0.08em',
-            textAlign: 'left',
-            color: '#64748B'
-          }}>Sign out</p>
+        <nav className="flex items-center gap-6 text-sm font-medium">
+          <Link className="hover:underline hover:underline-offset-4" href="#">
+            Preferences
+          </Link>
+        </nav>
+        <div className="flex items-center gap-2">
+          <Button size="sm">Sign out</Button>
         </div>
       </div>
-
-      <div className="divider"></div>
-      <p style={{ color: '#64748B', marginLeft: '200px' }}>Your Account</p>
-      <br/>
       
-      <div style={parentStyle}>
-        <div style={containerStyle}>
+    </header>
+    <Separator className="border-t-1 mx-auto  border-zinc-100 " />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
           
-          
-          <Dialog>
-      <DialogTrigger asChild>
-        
-      <Button1 onClick={openModal}>
-            <h2 style={{
-              fontFamily: 'SF Pro',
-              fontSize: '16px',
-              fontWeight: 590,
-              lineHeight: '20px',
-              textAlign: 'left'
-            }}>Roy Mohubu</h2>
-            <p style={{
-              fontSize: '14px',
-              fontWeight: 100,
-              lineHeight: '20px',
-              textAlign: 'left'
-            }}>mohuburoy@gmail.com</p>
-          </Button1>
+          <div className="flex flex-col mr-4">
+            <Dialog>
+              <DialogTrigger asChild>
+                <button
+                  onClick={openModal}
+                  className="flex flex-col items-start px-7 py-5 bg-white border border-gray-200 rounded-lg shadow-md mb-2.5"
+                >
+                  <h2 className="text-base font-semibold text-gray-500">
+                    Profile
+                  </h2>
+                  <p className="text-sm text-gray-500">mohuburoy@gmail.com</p>
+                </button>
+              </DialogTrigger>
+              <DialogContent className="flex flex-col sm:max-w-[425px]">
+                <DialogHeader>
+                  <DialogTitle>Edit profile</DialogTitle>
+                  <DialogDescription>
+                    Make changes to your profile here. Click save when you are
+                    done.
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="grid gap-4 py-4">
+                  <div className="grid grid-cols-4 items-center gap-4">
+                    <Label htmlFor="name" className="text-right">
+                      Full Name
+                    </Label>
+                    <Input
+                      id="name"
+                      defaultValue="Roy Mohubu"
+                      className="col-span-3"
+                    />
+                  </div>
+                  <div className="grid grid-cols-4 items-center gap-4">
+                    <Label htmlFor="username" className="text-right">
+                      Username
+                    </Label>
+                    <Input
+                      id="username"
+                      placeholder="@username"
+                      className="col-span-3"
+                    />
+                  </div>
+                  <div className="grid grid-cols-4 items-center gap-4">
+                    <Label htmlFor="password" className="text-right">
+                      Type New Password
+                    </Label>
+                    <Input id="password" className="col-span-3" />
+                  </div>
+                  <div className="grid grid-cols-4 items-center gap-4">
+                    <Label htmlFor="retype password" className="text-right">
+                      Retype New Password
+                    </Label>
+                    <Input id="password" className="col-span-3" />
+                  </div>
+                </div>
+                <DialogFooter>
+                  <button
+                    type="submit"
+                    className="flex justify-center items-center px-5 py-2.5 bg-white text-red-500 rounded-lg"
+                  >
+                    Save changes
+                  </button>
+                </DialogFooter>
+              </DialogContent>
+            </Dialog>
 
-      </DialogTrigger>
-      <DialogContent className="flex flex-col sm:max-w-[425px]">
-        <DialogHeader>
-          <DialogTitle>Edit profile</DialogTitle>
-          <DialogDescription>
-            Make changes to your profile here. Click save when you are done.
-          </DialogDescription>
-        </DialogHeader>
-        <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="name" className="text-right">
-              Full Name
-            </Label>
-            <Input
-              id="name"
-              defaultValue="Roy Mohubu"
-              className="col-span-3"
-            />
-          </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="username" className="text-right">
-              Username
-            </Label>
-            <Input
-              id="username"
-              placeholder='@username'
-              className="col-span-3"
-            />
-          </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="password" className="text-right">
-              Type New Password
-            </Label>
-            <Input
-              id="password"
-              className="col-span-3"
-            />
-          </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="retype password" className="text-right">
-              Retype New Password
-            </Label>
-            <Input
-              id="password"
-              className="col-span-3"
-            />
-          </div>
-        </div>
-        <DialogFooter>
-          <ButtonDialog type="submit">Save changes</ButtonDialog>
-        </DialogFooter>
-      </DialogContent>
-    </Dialog>
+            <div className="flex justify-between items-center px-7 py-5 bg-white border border-gray-200 rounded-lg shadow-md mb-2.5">
+              <h2 className="text-base font-semibold text-gray-500">
+                Notifications
+              </h2>
 
-          <Button2>
-            <h2 style={{
-              fontFamily: 'SF Pro',
-              fontSize: '16px',
-              fontWeight: 590,
-              lineHeight: '20px',
-              textAlign: 'left'
-            }}>Notifications</h2>
-            <Switch
-              checked={isEnabled}
-              onChange={() => setIsEnabled(!isEnabled)}
-              name="checkedA"
-            />
-          </Button2>
-          <Button>
-            <h2 style={{
-              fontFamily: 'SF Pro',
-              fontSize: '16px',
-              fontWeight: 590,
-              lineHeight: '20px',
-              textAlign: 'left'
-            }}>Delete account</h2>
-          </Button>
+              <Switch />
+            </div>
+            <button className="flex px-7 py-5 bg-white border border-gray-200 rounded-lg shadow-md mb-2.5">
+              <h2 className="text-base font-semibold text-gray-500">
+                Delete account
+              </h2>
+            </button>
+          </div>
+          <TicketCard />
         </div>
-        <div className=''>
-            <Card className='w-full h-full border-radius-sm items-center gap-4 p-4'>
-             
-              <CardHeader>
-              <CardTitle>Current Plan</CardTitle>
-<CardDescription>Free</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p>Upgrade to a premium plan to unlock more features.</p>
-                
-              </CardContent>
-              <CardFooter></CardFooter>
-
-            </Card>
-        </div>
-      </div>
+      </main>
     </div>
   );
 }
