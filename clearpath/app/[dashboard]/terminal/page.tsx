@@ -8,7 +8,7 @@ import TopBar from "@/components/component/topbar";
 export default function Terminal() {
   return (
     <main className="min-h-screen bg-[#F8FAFC]">
-      <div className="w-[1058px] mx-auto relative pt-14">
+      <div className=" max-w-[1058px] mx-auto relative pt-14">
         <TopBar />
         <div className=" flex mt-[96px]">
           <DailyMotivation />

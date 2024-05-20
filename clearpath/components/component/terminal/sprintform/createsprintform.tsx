@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { addDays, format } from "date-fns";
-import { Calendar as CalendarIcon } from "lucide-react";
+import { Calendar as CalendarIcon, ChevronRightIcon, X } from "lucide-react";
 import { DateRange } from "react-day-picker";
 import { cn } from "@/lib/utils";
 import { Calendar } from "@/components/ui/calendar";
@@ -50,6 +50,7 @@ const formSchema = z.object({
   capacity: z.number().min(0, {
     message: "Capacity must be at least 0.",
   }),
+  goals: z.string().optional(),
 });
 
 interface CreateSprintFormProps {
@@ -68,13 +69,28 @@ export function CreateSprintForm({ onClose }: CreateSprintFormProps) {
       },
       done: "",
       capacity: 0,
+      goals: "",
     },
   });
+
+  const formValues = form.watch();
+
+  const isFormValid = () => {
+    try {
+      formSchema.parse(formValues);
+      return true;
+    } catch {
+      return false;
+    }
+  };
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log("Title:", values.title);
     console.log("Description:", values.description);
     console.log("Sprint Duration:", values.sprintduration);
+    console.log("Defintion of Done", values.done);
+    console.log("Capacity/Velocity", values.capacity);
+    console.log("Goals:", values.goals);
   }
 
   return (
@@ -91,7 +107,7 @@ export function CreateSprintForm({ onClose }: CreateSprintFormProps) {
               </FormDescription>
               <FormControl>
                 <Input
-                  className=" placeholder:text-[#64748B] placeholder:font-light"
+                  className=" placeholder:text-[#64748B] placeholder:font-light focus-visible:border-[#00C16A] focus-visible:ring-[#00C16A]"
                   placeholder="Market size week"
                   {...field}
                 />
@@ -111,7 +127,7 @@ export function CreateSprintForm({ onClose }: CreateSprintFormProps) {
               </FormDescription>
               <FormControl>
                 <Input
-                  className=" placeholder:text-[#64748B] placeholder:font-light"
+                  className=" placeholder:text-[#64748B] placeholder:font-light focus-visible:border-[#00C16A] focus-visible:ring-[#00C16A]"
                   placeholder="Do TAM, SAM, TM"
                   {...field}
                 />
@@ -155,7 +171,7 @@ export function CreateSprintForm({ onClose }: CreateSprintFormProps) {
               </FormDescription>
               <FormControl>
                 <Input
-                  className=" placeholder:text-[#64748B] placeholder:font-light"
+                  className=" placeholder:text-[#64748B] placeholder:font-light focus-visible:border-[#00C16A] focus-visible:ring-[#00C16A]"
                   placeholder="Work done"
                   {...field}
                 />
@@ -185,6 +201,21 @@ export function CreateSprintForm({ onClose }: CreateSprintFormProps) {
             </FormItem>
           )}
         />
+        <FormField
+          control={form.control}
+          name="goals"
+          render={({ field }) => (
+            <FormItem>
+              <FormControl>
+                <GoalsField
+                  value={field.value || ""}
+                  onChange={field.onChange}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
         <div className="flex gap-2">
           <Button
             type="button"
@@ -195,7 +226,7 @@ export function CreateSprintForm({ onClose }: CreateSprintFormProps) {
           >
             Cancel
           </Button>
-          <Button type="submit" variant="success" size="xs" className="w-[50%]">
+          <Button type="submit" variant="success" size="xs" className="w-[50%]" disabled={!isFormValid()}>
             Create Sprint
           </Button>
         </div>
@@ -275,7 +306,7 @@ export function CapacityCounter({
         type="number"
         value={value}
         readOnly
-        className="w-[70%] text-center bg-transparent border-none"
+        className="w-[70%] text-center bg-transparent border-none focus-visible:ring-[#F8FAFC]"
       />
       <div className="ms-auto">
         <Button
@@ -295,6 +326,136 @@ export function CapacityCounter({
           +
         </Button>
       </div>
+    </div>
+  );
+}
+
+export function GoalsField({
+  value,
+  onChange,
+}: {
+  value: string;
+  onChange: (value: string) => void;
+}) {
+  const [open, setOpen] = React.useState(false);
+  const [editing, setEditing] = React.useState(false);
+  const [text, setText] = React.useState(value);
+  const [buttonEnabled, setButtonEnabled] = React.useState(false);
+  const [goalsSet, setGoalsSet] = React.useState(false);
+
+  React.useEffect(() => {
+    setButtonEnabled(text.trim().length > 0);
+  }, [text]);
+
+  const handlePopoverOpen = () => {
+    setOpen(true);
+    setText(value);
+  };
+
+  const handlePopoverClose = () => {
+    setOpen(false);
+    setEditing(false);
+    if (text.trim().length === 0) {
+      setGoalsSet(false);
+      setText(value);
+    }
+  };
+
+  const handleEditClick = () => setEditing(true);
+
+  const handleSetGoals = () => {
+    if (text.trim().length === 0) {
+      setGoalsSet(false);
+    } else {
+      onChange(text);
+      setGoalsSet(true);
+    }
+    handlePopoverClose();
+  };
+
+  return (
+    <div className="relative">
+      <Popover open={open} onOpenChange={setOpen}>
+        <PopoverTrigger asChild>
+          <div
+            className={`flex items-center justify-between p-4 rounded-lg cursor-pointer ${
+              goalsSet ? "bg-[#EFFDF5]" : "bg-[#F8FAFC]"
+            }`}
+            onClick={handlePopoverOpen}
+          >
+            <span className="text-[#64748B] font-light text-sm">
+              {goalsSet ? <div className="text-[#00C16A] font-normal">{"Your goals are set"}</div> : "Goals"}
+            </span>
+            <ChevronRightIcon className={`h-6 w-6 ${goalsSet ? "text-[#00C16A]" : "text-[#64748B]"}`} />
+          </div>
+        </PopoverTrigger>
+        <PopoverContent
+          className="p-4"
+          align="end"
+          alignOffset={-360}
+          sideOffset={-52}
+        >
+          <div className="flex after:content[''] after:absolute after:w-full after:h-[1px] after:bg-[#CBD5E1] after:top-12 after:left-0 mb-6">
+            <p>Sprint goals</p>
+            <Button
+              className="ms-auto w-4 h-4"
+              onClick={handlePopoverClose}
+              variant="link"
+              size="xs"
+              type="button"
+            >
+              <X />
+            </Button>
+          </div>
+          {editing ? (
+            <>
+              <textarea
+                className="w-full h-80 p-2 focus-visible:outline-none placeholder:text-sm"
+                value={text}
+                placeholder="Typing..."
+                onChange={(e) => setText(e.target.value)}
+              />
+            </>
+          ) : (
+            <div
+              className="flex items-center h-80 justify-center p-2 cursor-text"
+              onClick={handleEditClick}
+            >
+              <span className="text-gray-500 text-sm font-light flex flex-col items-center">
+                <Image
+                  src="/setgoals.svg"
+                  alt="goals icon"
+                  width={166.67}
+                  height={125}
+                  className="mr-2"
+                />
+                {goalsSet? value : "Click here to start typing"}
+              </span>
+            </div>
+          )}
+          <div className="flex gap-2">
+            <Button
+              type="button"
+              className="w-[50%]"
+              variant="outline"
+              size="xs"
+              onClick={handlePopoverClose}
+            >
+              Cancel
+            </Button>
+            <Button
+              type="submit"
+              className="w-[50%]"
+              variant="success"
+              size="xs"
+              onClick={handleSetGoals}
+              disabled={!buttonEnabled}
+            >
+              Set goals
+            </Button>
+          </div>
+        </PopoverContent>
+      </Popover>
     </div>
   );
 }

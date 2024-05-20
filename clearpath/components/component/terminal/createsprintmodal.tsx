@@ -8,7 +8,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import Image from "next/image";
-import { CreateSprintForm } from "./createsprintform";
+import { CreateSprintForm } from "./sprintform/createsprintform";
 
 export default function CreateSprintModal() {
     const [isOpen, setIsOpen] = React.useState(false);
