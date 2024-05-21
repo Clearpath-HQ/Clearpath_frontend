@@ -19,11 +19,11 @@ export default function TopBar() {
         <p className=" text-[#64748B] text-xl">{formattedDate}</p>
       </div>
       <div className="flex self-center ms-auto gap-2">
-        <Button size="sm" variant="outline" className="shadow font-normal bg-white">
+        <Button size="sm" variant="outline" className="shadow font-normal bg-[#ffffffe6]">
           <RefreshCwIcon className="mr-2 w-4" strokeWidth="2px" />
           Switch
         </Button>
-        <Button size="sm" variant="outline" className="shadow font-normal bg-white">
+        <Button size="sm" variant="outline" className="shadow font-normal bg-[#ffffffe6]">
           <Image
             src="/bell.svg"
             alt="notification-icon"

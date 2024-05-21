@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import {
@@ -11,11 +13,12 @@ import Image from "next/image";
 import { CreateSprintForm } from "./sprintform/createsprintform";
 
 export default function CreateSprintModal() {
-    const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
 
-    const handleClose = () => {
-        setIsOpen(false);
-      };
+  const handleClose = () => {
+    setIsOpen(false);
+  };
+
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
@@ -28,11 +31,16 @@ export default function CreateSprintModal() {
           <DialogTitle>Create Sprint</DialogTitle>
           <div className="flex justify-center items-center">
             <div className=" absolute w-[47%] left-0 h-[1px] bg-[#CBD5E1]"></div>
-            <Image src="/logo.png" alt="clearpath logo" width={20} height={20}/>
+            <Image
+              src="/logo.png"
+              alt="clearpath logo"
+              width={20}
+              height={20}
+            />
             <div className="absolute w-[47%] right-0 h-[1px] bg-[#CBD5E1]"></div>
           </div>
         </DialogHeader>
-        <CreateSprintForm onClose={handleClose}/>
+        <CreateSprintForm onClose={handleClose} />
       </DialogContent>
     </Dialog>
   );

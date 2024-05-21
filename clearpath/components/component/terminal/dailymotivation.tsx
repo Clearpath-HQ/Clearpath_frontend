@@ -1,3 +1,5 @@
+"use client";
+
 /* eslint-disable react/no-unescaped-entities */
 import { Badge } from "@/components/ui/badge";
 import React from "react";
@@ -24,13 +26,12 @@ export default function DailyMotivation() {
 
       try {
         const response = await fetch(
-          "https://api.api-ninjas.com/v1/quotes?category=happiness",
+          "https://api.api-ninjas.com/v1/quotes?category=courage",
           {
             headers: { "X-Api-Key": apiKey },
           }
         );
         if (!response.ok) {
-          // Check if response status is not ok (e.g., 401 for unauthorized)
           throw new Error(`API request failed with status ${response.status}`);
         }
 
@@ -40,25 +41,27 @@ export default function DailyMotivation() {
         console.error("Error fetching quote:", error);
         setError("An error occurred while fetching the quote.");
       } finally {
-        setIsLoading(false); // Always set isLoading to false, even on error
+        setIsLoading(false);
       }
     };
 
     fetchQuote();
   }, []);
   return (
-    <div className="shadow-lg w-[461px] h-[250px] rounded-lg bg-gradient-to-br from-white to-gray-600 relative after:content[''] after:absolute after:w-full after:h-full after:bg-[url('/grainBG.png')] after:top-0">
-      <div className="p-7">
-        <Badge className="rounded-md">Daily Motivation</Badge>
-        {isLoading ? (
-          <p>Loading quote...</p>
-        ) : error ? (
-          <p className="text-red-500">{error}</p>
-        ) : quote ? (
-          <p className="text-center text-lg font-semibold">
-            "{quote.quote}" <br /> - {quote.author}
-          </p>
-        ) : null}
+    <div className="shadow-lg w-[461px] h-[250px] rounded-lg bg-gradient-to-bl  from-[#ffffffad] to-[#64748B] relative after:content[''] after:absolute after:w-full after:h-full after:bg-[url('/grainBG.png')] after:top-0">
+      <div className="p-7 flex flex-col h-full">
+        <Badge className="rounded-md w-fit">Daily Motivation</Badge>
+        <div className="mt-auto">
+          {isLoading ? (
+            <p>Loading quote...</p>
+          ) : error ? (
+            <p className="text-red-500">{error}</p>
+          ) : quote ? (
+            <p className="text-start font-semibold text-[#FEFEFE]">
+              "{quote.quote}" <br /> - {quote.author}
+            </p>
+          ) : null}
+        </div>
       </div>
     </div>
   );
