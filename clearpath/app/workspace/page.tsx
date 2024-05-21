@@ -99,17 +99,17 @@ export default function Workspace() {
                           <div className="flex items-center justify-between">
                             <button
                               type="button"
+                              className="bg-[#F8FAFC] hover:bg-[#aeafb1] text-[#334155] border border-[#CBD5E1] font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                              onClick={() => handlePlusClick("backlog")}
+                            >
+                              Cancel
+                            </button>
+                            <button
+                              type="button"
                               className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                               onClick={() => handlePlusClick("backlog")}
                             >
                               Create task
-                            </button>
-                            <button
-                              type="button"
-                              className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                              onClick={() => handlePlusClick("backlog")}
-                            >
-                              Cancel
                             </button>
                           </div>
                         </form>
@@ -186,17 +186,17 @@ export default function Workspace() {
                           <div className="flex items-center justify-between">
                             <button
                               type="button"
+                              className="bg-[#F8FAFC] hover:bg-[#aeafb1] text-[#334155] border border-[#CBD5E1] font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                              onClick={() => handlePlusClick("inProgress")}
+                            >
+                              Cancel
+                            </button>
+                            <button
+                              type="button"
                               className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                               onClick={() => handlePlusClick("inProgress")}
                             >
                               Create task
-                            </button>
-                            <button
-                              type="button"
-                              className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                              onClick={() => handlePlusClick("inProgress")}
-                            >
-                              Cancel
                             </button>
                           </div>
                         </form>
@@ -273,17 +273,17 @@ export default function Workspace() {
                           <div className="flex items-center justify-between">
                             <button
                               type="button"
+                              className="bg-[#F8FAFC] hover:bg-[#aeafb1] text-[#334155] border border-[#CBD5E1] font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                              onClick={() => handlePlusClick("done")}
+                            >
+                              Cancel
+                            </button>
+                            <button
+                              type="button"
                               className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                               onClick={() => handlePlusClick("done")}
                             >
                               Create task
-                            </button>
-                            <button
-                              type="button"
-                              className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                              onClick={() => handlePlusClick("done")}
-                            >
-                              Cancel
                             </button>
                           </div>
                         </form>
