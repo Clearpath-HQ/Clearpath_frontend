@@ -6,16 +6,17 @@ import TerminalCoffeeCard from "@/components/component/terminal/terminalcoffeeca
 import TopBar from "@/components/component/topbar";
 
 export default function Terminal() {
-
   return (
-    <main className="min-h-screen w-[1058px] mx-auto relative">
-      <TopBar/>
+    <main className="min-h-screen bg-[#F8FAFC]">
+      <div className=" max-w-[1058px] mx-auto relative pt-14">
+        <TopBar />
         <div className=" flex mt-[96px]">
-          <DailyMotivation/>
-          <TerminalCoffeeCard/>
+          <DailyMotivation />
+          <TerminalCoffeeCard />
         </div>
         <p className="text-[#CBD5E1] my-6 text-xl">Sprint breakdown</p>
-        <CreateSprintCard/>
+        <CreateSprintCard />
+      </div>
     </main>
   );
 }
