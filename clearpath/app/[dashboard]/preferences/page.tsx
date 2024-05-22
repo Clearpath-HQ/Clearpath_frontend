@@ -48,28 +48,28 @@ export default function Preferences() {
   return (
     <div className="flex min-h-screen w-full  justify-center bg-white px-4 py-2 dark:bg-gray-250">
       <main className="flex-1 overflow-auto grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
-      <header className="flex h-16 w-full items-center justify-center px-4 md:px-6">
-      <div className="mx-auto max-w-[1132px] flex w-full items-center justify-between">
-        <div className="flex flex-col items-start">
-        <h1 className="py-4 text-[32px] font-semibold leading-none tracking-tight md:pt-11 text-gray-950">
+        <header className="flex h-16 w-full items-center justify-center px-4 md:px-6">
+        <div className="mx-auto max-w-[1132px] flex w-full items-center justify-between">
+          <div className="flex flex-col items-start">
+          <h1 className="py-4 text-[32px] font-semibold leading-none tracking-tight md:pt-11 text-gray-950">
+                Preferences
+              </h1>
+            <p className="text-gray-500 font-medium">mohuburoy@gmail.com</p>
+          </div>
+          <nav className="flex items-center gap-6 text-sm font-medium">
+            <Link className="hover:underline hover:underline-offset-4" href="#">
               Preferences
-            </h1>
-          <p className="text-gray-500 font-medium">mohuburoy@gmail.com</p>
+            </Link>
+          </nav>
+          <div className="flex items-center p-4">
+        
+            <Button size="sm">Sign out</Button>
+          </div>
         </div>
-        <nav className="flex items-center gap-6 text-sm font-medium">
-          <Link className="hover:underline hover:underline-offset-4" href="#">
-            Preferences
-          </Link>
-        </nav>
-        <div className="flex items-center p-4">
-        <p className="your-account">Your Account</p>
-          <Button size="sm">Sign out</Button>
-        </div>
-      </div>
-    </header>
-
+      </header>
+      <div className="divider"></div>
+      <p className="your-account">Your Account</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-          
           <div className="flex flex-col mr-4">
             <Dialog>
               <DialogTrigger asChild>
@@ -78,7 +78,7 @@ export default function Preferences() {
                   className="flex flex-col items-start px-7 py-5 bg-white border border-gray-200 rounded-lg shadow-md mb-2.5"
                 >
                   <h2 className="text-base font-semibold text-gray-500">
-                    Profile
+                    My Profile
                   </h2>
                   <p className="text-sm text-gray-500">mohuburoy@gmail.com</p>
                 </button>
@@ -138,7 +138,7 @@ export default function Preferences() {
 
             <div className="flex justify-between items-center px-7 py-5 bg-white border border-gray-200 rounded-lg shadow-md mb-2.5">
               <h2 className="text-base font-semibold text-gray-500">
-                Notifications
+                My Notifications
               </h2>
               <Switch />
             </div>
