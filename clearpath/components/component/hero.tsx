@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button"
 import { SheetTrigger, SheetContent, Sheet } from "@/components/ui/sheet"
 import Link from "next/link"
 import Image from "next/image";
+import ShineButton from "@/components/component/buttons/Shine";
+import ShimmerButton from "@/components/component/buttons/Shimmer";
 
 export function Hero() {
   return (
@@ -24,7 +26,10 @@ export function Hero() {
           <Link className="text-lg font-semibold hover:underline underline-offset-4" href="https://github.com/Samsonroyal/Clearpath">
             Github Repo
           </Link>
+          <ShimmerButton />
+          <ShineButton />
         </nav>
+ 
         <Sheet>
           <SheetTrigger asChild>
             <Button className="lg:hidden" size="icon" variant="outline">
@@ -37,6 +42,9 @@ export function Hero() {
               <Link className="flex w-full items-center py-2 text-lg font-semibold" href="https://github.com/Samsonroyal/Clearpath">
                 Github Repo
               </Link>
+              <ShimmerButton />
+          <ShineButton />
+         
             </nav>
           </SheetContent>
         </Sheet>
@@ -56,7 +64,7 @@ export function Hero() {
               </div>
               <Link
                 className="inline-flex h-9 items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
-                href="#"
+                href="/auth/signup"
               >
                 Get Started
               </Link>
@@ -73,7 +81,7 @@ export function Hero() {
       </main>
       <footer className="flex flex-col justify-between items-center px-4 py-6 w-full shrink-0 border-t sm:flex-row sm:justify-between sm:px-8 lg:px-16 fixed bottom-0 left-0 right-0 bg-white bg-opacity-90 backdrop-blur-lg dark:bg-gray-800 dark:bg-opacity-80">
   <p className="text-xs text-gray-500 dark:text-gray-400">
-    © 2024 Clearpath. Open Source Software built for the world from MEST.
+    © 2024 Clearpath. Open Source Software Built with ❤️ from Accra 🇬🇭
   </p>
 
   <nav className="mt-4 sm:mt-0 flex gap-4 sm:gap-6">
