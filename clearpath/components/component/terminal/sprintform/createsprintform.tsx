@@ -101,7 +101,7 @@ export function CreateSprintForm({ onClose }: CreateSprintFormProps) {
           name="title"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-[#334155]">Title</FormLabel>
+              <FormLabel className="text-[#334155] dark:text-white">Title</FormLabel>
               <FormDescription className="text-[#64748B]">
                 A short, descriptive name for the sprint.
               </FormDescription>
@@ -121,7 +121,7 @@ export function CreateSprintForm({ onClose }: CreateSprintFormProps) {
           name="description"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-[#334155]">Description</FormLabel>
+              <FormLabel className="text-[#334155] dark:text-white">Description</FormLabel>
               <FormDescription className="text-[#64748B]">
                 {"Briefly describe the sprint's objectives and scope"}.
               </FormDescription>
@@ -141,7 +141,7 @@ export function CreateSprintForm({ onClose }: CreateSprintFormProps) {
           name="sprintduration"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-[#334155]">Sprint Duration</FormLabel>
+              <FormLabel className="text-[#334155] dark:text-white">Sprint Duration</FormLabel>
               <FormControl>
                 <DatePickerWithRange
                   value={field.value}
@@ -163,7 +163,7 @@ export function CreateSprintForm({ onClose }: CreateSprintFormProps) {
           name="done"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-[#334155]">
+              <FormLabel className="text-[#334155] dark:text-white">
                 Definition of Done
               </FormLabel>
               <FormDescription className="text-[#64748B]">
@@ -185,7 +185,7 @@ export function CreateSprintForm({ onClose }: CreateSprintFormProps) {
           name="capacity"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-[#334155]">
+              <FormLabel className="text-[#334155] dark:text-white">
                 Capacity / Velocity
               </FormLabel>
               <FormDescription className="text-[#64748B]">
@@ -254,7 +254,7 @@ export function DatePickerWithRange({
             id="date"
             variant={"outline"}
             className={cn(
-              "w-full justify-start text-left font-light text-[#64748B]",
+              "w-full justify-start text-left font-light text-[#64748B] dark:text-white dark:border dark:bg-gray-900 dark:border-[#1E293B]",
               !value && "text-muted-foreground"
             )}
           >
@@ -272,10 +272,10 @@ export function DatePickerWithRange({
                 {format(today, "LLL dd, y")} - {format(fiveDays, "LLL dd, y")}
               </span>
             )}
-            <CalendarIcon className="ms-auto text-[#94A3B8] h-4 w-4" />
+            <CalendarIcon className="ms-auto text-[#94A3B8] h-4 w-4 dark:text-white" />
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-auto p-0" align="end">
+        <PopoverContent className="w-auto p-0 dark:bg-gray-900 dark:text-white" align="end">
           <Calendar
             initialFocus
             mode="range"
@@ -301,7 +301,7 @@ export function CapacityCounter({
   const handleDecrement = () => onChange(value > 0 ? value - 1 : 0);
 
   return (
-    <div className="flex bg-[#F8FAFC] rounded-lg p-2">
+    <div className="flex bg-[#F8FAFC] dark:bg-gray-900 dark:border-[#1E293B] rounded-lg p-2">
       <Input
         type="number"
         value={value}
@@ -312,7 +312,7 @@ export function CapacityCounter({
         <Button
           variant="outline"
           type="button"
-          className=" rounded-r-none rounded-ee-none"
+          className=" rounded-r-none rounded-ee-none dark:border-[#F8FAFC]"
           onClick={handleDecrement}
         >
           -
@@ -320,7 +320,7 @@ export function CapacityCounter({
         <Button
           variant="outline"
           type="button"
-          className=" rounded-tl-none rounded-bl-none"
+          className=" rounded-tl-none rounded-bl-none dark:border-[#F8FAFC]"
           onClick={handleIncrement}
         >
           +
@@ -378,21 +378,21 @@ export function GoalsField({
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
           <div
-            className={`flex items-center justify-between p-4 rounded-lg cursor-pointer ${
+            className={`flex items-center justify-between p-4 rounded-lg dark:bg-gray-900 cursor-pointer dark:border dark:border-[#1E293B] dark:hover:bg-gray-800 ${
               goalsSet ? "bg-[#EFFDF5]" : "bg-[#F8FAFC]"
             }`}
             onClick={handlePopoverOpen}
           >
-            <span className="text-[#64748B] font-light text-sm">
+            <span className="text-[#64748B] font-light text-sm dark:text-white">
               {goalsSet ? <div className="text-[#00C16A] font-normal">{"Your goals are set"}</div> : "Goals"}
             </span>
-            <ChevronRightIcon className={`h-6 w-6 ${goalsSet ? "text-[#00C16A]" : "text-[#64748B]"}`} />
+            <ChevronRightIcon className={`h-6 w-6 ${goalsSet ? "text-[#00C16A]" : "text-[#64748B] dark:text-white"}`} />
           </div>
         </PopoverTrigger>
         <PopoverContent
-          className="p-4"
+          className="p-4 dark:bg-[#020420] dark:text-white dark:border-[#1E293B]"
           align="end"
-          alignOffset={-360}
+          alignOffset={-200}
           sideOffset={-52}
         >
           <div className="flex after:content[''] after:absolute after:w-full after:h-[1px] after:bg-[#CBD5E1] after:top-12 after:left-0 mb-6">
@@ -410,9 +410,9 @@ export function GoalsField({
           {editing ? (
             <>
               <textarea
-                className="w-full h-80 p-2 focus-visible:outline-none placeholder:text-sm"
+                className="w-full h-80 p-2 focus-visible:outline-none placeholder:text-sm dark:bg-[#020420]"
                 value={text}
-                placeholder="Typing..."
+                placeholder="Click to type..."
                 onChange={(e) => setText(e.target.value)}
               />
             </>
