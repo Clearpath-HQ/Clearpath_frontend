@@ -48,7 +48,7 @@ export default function DailyMotivation() {
     fetchQuote();
   }, []);
   return (
-    <div className="shadow-lg w-[461px] h-[250px] rounded-lg bg-gradient-to-bl  from-[#ffffffad] to-[#64748B] relative after:content[''] after:absolute after:w-full after:h-full after:bg-[url('/grainBG.png')] after:top-0">
+    <div className="shadow-lg w-[461px] h-[250px] dark:border dark:border-[#1E293B] rounded-lg bg-gradient-to-bl from-[#ffffffad] to-[#64748B] dark:bg-gradient-to-br dark:from-[#0F172A] dark:to-black relative after:content[''] after:absolute after:w-full after:h-full after:bg-[url('/grainBG.png')] after:top-0">
       <div className="p-7 flex flex-col h-full">
         <Badge className="rounded-md w-fit">Daily Motivation</Badge>
         <div className="mt-auto">
