@@ -28,7 +28,7 @@ export const DashboardSidebar = () => {
   }
 
   return (
-    <div className="h-screen w-max dashNav flex flex-col items-center justify-center px-4">
+    <div className="h-screen w-max dashNav bg-[#f1f5f9] dark:bg-[#02041E] dark:border-r dark:border-[#c9d1dc21] flex flex-col items-center justify-center px-4">
       <Image
         src="/group.svg"
         alt="logo"
@@ -44,7 +44,7 @@ export const DashboardSidebar = () => {
               <Link href="/dashboard/terminal">
                 <HomeIcon
                   className={`sideNavIcon cursor-pointer ${
-                    selectedIcon === 'home' ? 'text-green-500' : 'text-black'
+                    selectedIcon === 'home' ? 'text-green-500' : 'text-black dark:text-white'
                   }`}
                   onClick={() => handleIconClick('home')}
                 />
@@ -62,7 +62,7 @@ export const DashboardSidebar = () => {
               <Link href="/dashboard/workspace">
                 <StackIcon
                   className={`sideNavIcon cursor-pointer ${
-                    selectedIcon === 'workspace' ? 'text-green-500' : 'text-black'
+                    selectedIcon === 'workspace' ? 'text-green-500' : 'text-black dark:text-white'
                   }`}
                   onClick={() => handleIconClick('workspace')}
                 />
@@ -80,7 +80,7 @@ export const DashboardSidebar = () => {
               <Link href="/dashboard/preferences">
                 <GearIcon
                   className={`sideNavIcon cursor-pointer ${
-                    selectedIcon === 'preferences' ? 'text-green-500' : 'text-black'
+                    selectedIcon === 'preferences' ? 'text-green-500' : 'text-black dark:text-white'
                   }`}
                   onClick={() => handleIconClick('preferences')}
                 />
