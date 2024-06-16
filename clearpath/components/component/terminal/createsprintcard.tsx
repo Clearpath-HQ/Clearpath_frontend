@@ -5,9 +5,9 @@ import CreateSprintModal from "./createsprintmodal";
 
 export default function CreateSprintCard() {
   return (
-    <div className=" flex shadow-lg h-[300px] rounded-xl overflow-hidden bg-white">
+    <div className=" flex shadow-lg h-[300px] rounded-xl overflow-hidden bg-white dark:bg-transparent dark:border dark:border-[#1E293B]">
       <div className="capitalize w-[658px] flex flex-col justify-center items-center">
-        <div className="w-[395px] mx-auto text-center">
+        <div className="w-[395px] mx-auto text-center text-black dark:text-[#FAFAFA] relative after:content[''] after:absolute after:w-full after:h-full after:bg-[url('/pattern.svg')] after:-top-10 after:right-10">
           <p className="text-4xl font-medium">
             Efficiency begins with short sprints.
           </p>
